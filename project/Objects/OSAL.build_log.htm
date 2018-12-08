@@ -1,0 +1,254 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.12.0.0
+Copyright (C) 2014 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: zhao Administrator, °®µÄÉ«·Å, LIC=21EY8-32MLW-LPAZV-PXXBA-9DMAM-K6K9U
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.12.0.0
+Toolchain Path:  D:\Installsoftware\keil5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 (build 41)
+Assembler:       Armasm.exe V5.05 (build 41)
+Linker/Locator:  ArmLink.exe V5.05 (build 41)
+Library Manager: ArmAr.exe V5.05 (build 41)
+Hex Converter:   FromElf.exe V5.05 (build 41)
+CPU DLL:         SARMCM3.DLL V5.12.0.0
+Dialog DLL:      DCM.DLL V1.13.0.0
+Target DLL:      UL2CM3.DLL V1.153.0.0
+Dialog DLL:      TCM.DLL V1.14.2.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\OSAL\project\OSAL.uvprojx
+Project File Date:  12/08/2018
+
+<h2>Output:</h2>
+Build target 'OSAL'
+compiling osal.c...
+linking...
+Program Size: Code=2976 RO-data=348 RW-data=52 ZI-data=1636  
+".\Objects\OSAL.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\OSAL\project\RTE
+  D:\Installsoftware\keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Load "C:\\Users\\Administrator\\Desktop\\OSAL\\project\\Objects\\OSAL.axf" 
+Internal DLL Error
+Error: Flash Download failed  -  Target DLL has been cancelled
+Load "C:\\Users\\Administrator\\Desktop\\OSAL\\project\\Objects\\OSAL.axf" 
+Set JLink Project File to "C:\Users\Administrator\Desktop\OSAL\project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103RB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.91b, compiled Sep 15 2014 09:17:56
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 799713843 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103RB
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+</pre>
+</body>
+</html>
+and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\src\stm32f10x_rcc.c: 1 warning, 1 error
+compiling system_stm32f10x.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\inc\system_stm32f10x.c: 1 warning, 1 error
+compiling stm32f10x_it.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\src\stm32f10x_it.c(26): error:  #5: cannot open source input file "main.h": No such file or directory
+  #include "main.h"
+..\mcu\src\stm32f10x_it.c: 1 warning, 2 errors
+".\Objects\OSAL.axf" - 7 Error(s), 9 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\OSAL\project\RTE
+  D:\Installsoftware\keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Error(s), 11 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\OSAL\project\RTE
+  D:\Installsoftware\keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+(GPIO_PortSource));
+..\mcu\src\stm32f10x_gpio.c(486): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_gpio.c(554): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_REMAP(GPIO_Remap));
+..\mcu\src\stm32f10x_gpio.c(613): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_EXTI_PORT_SOURCE(GPIO_PortSource));
+..\mcu\src\stm32f10x_gpio.c(632): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ETH_MEDIA_INTERFACE(GPIO_ETH_MediaInterface)); 
+..\mcu\src\stm32f10x_gpio.c: 17 warnings, 1 error
+compiling mcu.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\src\mcu.c: 1 warning, 1 error
+compiling stm32f10x_rcc.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\src\stm32f10x_rcc.c(273): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_HSE(RCC_HSE));
+..\mcu\src\stm32f10x_rcc.c(338): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_CALIBRATION_VALUE(HSICalibrationValue));
+..\mcu\src\stm32f10x_rcc.c(357): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(383): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_PLL_SOURCE(RCC_PLLSource));
+..\mcu\src\stm32f10x_rcc.c(404): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(568): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_SYSCLK_SOURCE(RCC_SYSCLKSource));
+..\mcu\src\stm32f10x_rcc.c(612): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_HCLK(RCC_SYSCLK));
+..\mcu\src\stm32f10x_rcc.c(638): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_PCLK(RCC_HCLK));
+..\mcu\src\stm32f10x_rcc.c(664): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_PCLK(RCC_HCLK));
+..\mcu\src\stm32f10x_rcc.c(703): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_IT(RCC_IT));
+..\mcu\src\stm32f10x_rcc.c(731): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_USBCLK_SOURCE(RCC_USBCLKSource));
+..\mcu\src\stm32f10x_rcc.c(770): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_ADCCLK(RCC_PCLK2));
+..\mcu\src\stm32f10x_rcc.c(832): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_LSE(RCC_LSE));
+..\mcu\src\stm32f10x_rcc.c(865): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(882): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_RTCCLK_SOURCE(RCC_RTCCLKSource));
+..\mcu\src\stm32f10x_rcc.c(896): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(1067): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_AHB_PERIPH(RCC_AHBPeriph));
+..\mcu\src\stm32f10x_rcc.c(1098): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+..\mcu\src\stm32f10x_rcc.c(1129): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+..\mcu\src\stm32f10x_rcc.c(1188): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+..\mcu\src\stm32f10x_rcc.c(1219): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+..\mcu\src\stm32f10x_rcc.c(1240): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(1253): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(1285): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_MCO(RCC_MCO));
+..\mcu\src\stm32f10x_rcc.c(1332): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_FLAG(RCC_FLAG));
+..\mcu\src\stm32f10x_rcc.c(1406): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_GET_IT(RCC_IT));
+..\mcu\src\stm32f10x_rcc.c(1451): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_CLEAR_IT(RCC_IT));
+..\mcu\src\stm32f10x_rcc.c: 28 warnings, 1 error
+compiling system_stm32f10x.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\inc\system_stm32f10x.c: 1 warning, 1 error
+compiling stm32f10x_it.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\src\stm32f10x_it.c(26): error:  #5: cannot open source input file "main.h": No such file or directory
+  #include "main.h"
+..\mcu\src\stm32f10x_it.c: 1 warning, 2 errors
+".\Objects\OSAL.axf" - 7 Error(s), 55 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\OSAL\project\RTE
+  D:\Installsoftware\keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+rror(s), 56 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\OSAL\project\RTE
+  D:\Installsoftware\keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+..\mcu\src\stm32f10x_rcc.c(1240): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(1253): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\mcu\src\stm32f10x_rcc.c(1285): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_MCO(RCC_MCO));
+..\mcu\src\stm32f10x_rcc.c(1332): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_FLAG(RCC_FLAG));
+..\mcu\src\stm32f10x_rcc.c(1406): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_GET_IT(RCC_IT));
+..\mcu\src\stm32f10x_rcc.c(1451): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_CLEAR_IT(RCC_IT));
+..\mcu\src\stm32f10x_rcc.c: 28 warnings, 1 error
+compiling system_stm32f10x.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\inc\system_stm32f10x.c: 1 warning, 1 error
+compiling stm32f10x_it.c...
+..\mcu\inc\stm32f10x.h(298): error:  #67: expected a "}"
+    ADC1_2_IRQn                 = 18,     /*!< ADC1 and ADC2 global Interrupt                       */
+..\mcu\inc\stm32f10x.h(472): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\mcu\src\stm32f10x_it.c(26): error:  #5: cannot open source input file "main.h": No such file or directory
+  #include "main.h"
+..\mcu\src\stm32f10x_it.c: 1 warning, 2 errors
+".\Objects\OSAL.axf" - 24 Error(s), 54 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\OSAL\project\RTE
+  D:\Installsoftware\keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.

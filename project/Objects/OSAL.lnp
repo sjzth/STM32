@@ -1,0 +1,19 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\osal.o"
+".\objects\osal_task.o"
+".\objects\hal.o"
+".\objects\bsp.o"
+".\objects\core_cm3.o"
+".\objects\misc.o"
+".\objects\stm32f10x_gpio.o"
+".\objects\mcu.o"
+".\objects\stm32f10x_rcc.o"
+".\objects\startup_stm32f10x_hd.o"
+".\objects\system_stm32f10x.o"
+".\objects\stm32f10x_it.o"
+".\objects\mcu_prot.o"
+--strict --scatter ".\Objects\OSAL.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\OSAL.map" -o .\Objects\OSAL.axf
