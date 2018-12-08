@@ -13,7 +13,25 @@
 #ifndef OSAL_H
 #define OSAL_H
 #include "typedef.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+ #endif
+/** @addtogroup Çý¶¯²ã
+ * @{
+ */
+#define TASK_NO_TASK 0xff	
+	
+/** @@brief extern
+ * @{
+ */
 extern void osal_start_system(void);
 extern void TimingDelay_Decrement(void);
+extern uint8_t osal_set_eventEx( uint8_t task_id, uint16_t event_flag );
+	
+ #ifdef __cplusplus
+ }
+ #endif
 #endif
 

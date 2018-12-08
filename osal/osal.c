@@ -10,18 +10,28 @@
   * 
   ******************************************************************************
   */ 
-
-
-#include "osal.h"
 #include "hal.h"
-#include "mcu_port.h"
-#include "stm32f10x.h"
-	
-static __IO uint32_t TimingDelay;
+#include "osal.h"
+#include "osal_task.h"
+#include "osal_timer.h"
 
-/* Private function prototypes -----------------------------------------------*/
-void Delay(__IO uint32_t nTime);
+static volatile uint8_t activeTaskID = TASK_NO_TASK;
 
+uint8_t osal_set_eventEx( uint8_t task_id, uint16_t event_flag )
+{
+    if( task_id < tasksCnt )
+    {
+        halIntState_t x;
+        HAL_ENTER_CRITICAL_SECTION(x);
+        tasksEvents[task_id] |= event_flag;
+        HAL_EXIT_CRITICAL_SECTION(x);
+        return ( OSAL_SUCCESS );
+    }
+    else
+    {
+        return ( INVALID_TASK );
+    }
+}
 /*!
     @brief      初始化系统任务
     @param      无
@@ -30,12 +40,11 @@ void Delay(__IO uint32_t nTime);
 */
 void osal_init_system(void)
 {
-//    uint8_t idx = 0;
+    uint8_t idx = 0;
     hal_init();
-//    do {
-//        (tasksArr[idx])(idx,0x0000);
-//    } while (++idx < tasksCnt);
-//    hal_enable_interrupts();
+    do {
+        (tasksArr[idx])(idx,0x0000);
+    } while (++idx < tasksCnt);
 }
 /*!
     @brief      运行系统
@@ -45,30 +54,31 @@ void osal_init_system(void)
 */
 void osal_run_system(void)
 {
-   Delay(500);
-	 STM_SET_LEDOn(Lamp1);
-	 Delay(500);
-	 STM_EVAL_LEDOff(Lamp1);
+    uint8_t idx = 0;
+	 osal_time_updata();  //time update
+    hal_loop();
+	  do{
+		   if(tasksEvents[idx])break;
+		}while(++idx < tasksCnt);
+		if(idx < tasksCnt)
+		{
+		    uint16_t events;
+        halIntState_t x;
+        HAL_ENTER_CRITICAL_SECTION(x);  //进入临界区
+        events = tasksEvents[idx];      //保存任务事件
+        tasksEvents[idx] = 0;           //事件清空
+        HAL_EXIT_CRITICAL_SECTION(x);   //退出临界区
+			
+			  activeTaskID = idx;             //保存当前处理任务ID
+        events = (tasksArr[idx])(idx, events); //调用任务事件处理函数
+        activeTaskID = TASK_NO_TASK;    //清空当前处理任务ID
 
+        HAL_ENTER_CRITICAL_SECTION(x);  //进入临界区
+        tasksEvents[idx] |= events;     //将未处理完的事件重新放回
+        HAL_EXIT_CRITICAL_SECTION(x);   //退出临界区
+		}
 }
-void Delay(__IO uint32_t nTime)
-{ 
-  TimingDelay = nTime;
 
-  while(TimingDelay != 0);
-}
-/**
-  * @brief  Decrements the TimingDelay variable.
-  * @param  None
-  * @retval None
-  */
-void TimingDelay_Decrement(void)
-{
-  if (TimingDelay != 0x00)
-  { 
-    TimingDelay--;
-  }
-}
 /*!
     @brief      stm32f1x3主程序
     @param      无

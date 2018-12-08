@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\bsp;..\hal;..\osal;..\mcu\inc;..\mcu\inc\startup\arm</IncludePath>
+              <IncludePath>..\bsp;..\hal;..\osal;..\mcu\inc;..\mcu\inc\startup\arm;..\app</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -410,6 +410,13 @@
         </Group>
         <Group>
           <GroupName>app</GroupName>
+          <Files>
+            <File>
+              <FileName>app_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\app_control.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>main</GroupName>
@@ -432,7 +439,12 @@
             <File>
               <FileName>osal_task.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\osal_task.c</FilePath>
+              <FilePath>..\osal\osal_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>osal_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\osal\osal_timer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -444,6 +456,11 @@
               <FileType>1</FileType>
               <FilePath>..\hal\hal.c</FilePath>
             </File>
+            <File>
+              <FileName>hal_lamp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\hal\hal_lamp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -453,6 +470,11 @@
               <FileName>bsp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\bsp.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_lamp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\bsp_lamp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -498,11 +520,6 @@
               <FileName>stm32f10x_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\mcu\src\stm32f10x_it.c</FilePath>
-            </File>
-            <File>
-              <FileName>mcu_prot.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\mcu_prot.c</FilePath>
             </File>
           </Files>
         </Group>

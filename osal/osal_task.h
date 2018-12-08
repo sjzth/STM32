@@ -1,5 +1,5 @@
 /********************************************************************************
-  * @file    bsp.h 
+  * @file    mcu_port.h 
   * @author  zhaocc
   * @version V1.0.0
   * @date    2018.12.7
@@ -9,29 +9,24 @@
   *
   * 
   ******************************************************************************
-  */ 
-#ifndef BSP_H
-#define BSP_H
-
+  */
+#ifndef OSAL_TASKS_H
+#define OSAL_TASKS_H
+#include "osal.h"
 #ifdef __cplusplus
 extern "C"
 {
- #endif
-	
-/** @task BSP task
-  * @{
-  */	 	
-typedef enum {
-   Lamp1_id,
-	 Lamp2_id
-} bsp_port_id;
-	
-/** @addtogroup 系统层
-  * @{
-  */
-  extern void hal_mcu_init(void);
-	extern void bsp_init(void); 
- #ifdef __cplusplus
- }
- #endif	
+#endif
+
+/* 任务处理函数结构 */
+typedef uint16_t (*pTaskEventHandlerFn)( uint8_t task_id, uint16_t events );
+
+/* 任务处理函数集合 */
+extern const pTaskEventHandlerFn tasksArr[];
+extern uint16_t tasksEvents[];
+extern const uint8_t tasksCnt;
+#ifdef __cplusplus
+}
+#endif
+
 #endif
