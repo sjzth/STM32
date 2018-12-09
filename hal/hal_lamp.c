@@ -19,7 +19,7 @@ void hal_lamp_loop(uint16_t PastTime)
 		{
 		   for(i = 0;i < hal_lamp_amount; i++)
 			{
-          uint8_t lamp_on_off = 0;
+              uint8_t lamp_on_off = 0;
 				  if(hal_all_lamp[i].time == 0)
 					{
 						  lamp_on_off = BSP_LAMP_OFF;

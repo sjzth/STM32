@@ -90,6 +90,7 @@ extern hal_lamp_t hal_all_lamp[];
   */
 extern const uint8_t hal_lamp_amount;
 extern void hal_lamp_loop(uint16_t PastTime);
+extern void bsp_set_lamp( bsp_lamp_id_t lamp, uint8_t value );
  #ifdef __cplusplus
  }
  #endif

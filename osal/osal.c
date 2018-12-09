@@ -45,6 +45,7 @@ void osal_init_system(void)
     do {
         (tasksArr[idx])(idx,0x0000);
     } while (++idx < tasksCnt);
+	 HAL_ENABLE_INTERRUPTS;
 }
 /*!
     @brief      运行系统
@@ -62,14 +63,14 @@ void osal_run_system(void)
 		}while(++idx < tasksCnt);
 		if(idx < tasksCnt)
 		{
-		    uint16_t events;
+		  uint16_t events;
         halIntState_t x;
         HAL_ENTER_CRITICAL_SECTION(x);  //进入临界区
         events = tasksEvents[idx];      //保存任务事件
         tasksEvents[idx] = 0;           //事件清空
         HAL_EXIT_CRITICAL_SECTION(x);   //退出临界区
 			
-			  activeTaskID = idx;             //保存当前处理任务ID
+		  activeTaskID = idx;             //保存当前处理任务ID
         events = (tasksArr[idx])(idx, events); //调用任务事件处理函数
         activeTaskID = TASK_NO_TASK;    //清空当前处理任务ID
 

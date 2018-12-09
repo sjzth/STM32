@@ -14,6 +14,7 @@
 #include "bsp.h"	
 #include "hal.h"
 #include "hal_lamp.h"
+halIntState_t irq_state = 0;
 void hal_loop(void)
 {
     uint16_t PastTime;

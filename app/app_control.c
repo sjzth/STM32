@@ -22,7 +22,7 @@ static void set_event_register(void)
    if(app_task_id != 0 && enter == true)
 	 {
 	    hal_lamp_set(Lamp1_id,HAL_LAMP_CLOSE(HAL_LAMP_HOLD));
-		  hal_lamp_set(Lamp2_id,HAL_LAMP_OPEN(HAL_LAMP_HOLD));
+		 hal_lamp_set(Lamp2_id,HAL_LAMP_OPEN(HAL_LAMP_HOLD));
 	 }
 	 else if(app_task_id != 0 && enter == false)
 	 {
@@ -40,12 +40,12 @@ uint16_t Control_event_loopTask(uint8_t task_id, uint16_t events)
     {  //初始化
         app_task_id = task_id;  //记录分配的任务ID
         set_event_register();   //根据使能状态进行事件注册
-			  return (events ^ 0x0000);
-		}
+		  return (events ^ 0x0000);
+	 }
     else
-		{
-		    ;
-		}			
+	 {
+		  ;
+	 }			
 }
 
 

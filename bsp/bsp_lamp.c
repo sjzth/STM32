@@ -34,9 +34,28 @@ void lamp_port_Init(Lamp_TypeDef lamp)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_Init(GPIO_PORT[lamp], &GPIO_InitStructure);
 }
-void bsp_lamp_init(void)
+void bsp_lamp_init ( void )
 {
-   lamp_port_Init(Lamp1);
-	lamp_port_Init(Lamp2);
+   lamp_port_Init (Lamp1 );
+	lamp_port_Init (Lamp2 );
 }
-
+void bsp_set_lamp( bsp_lamp_id_t lamp, uint8_t value )
+{
+	switch(lamp)
+	{
+		case LAMP_LED1:
+			if(value == BSP_LAMP_OFF)
+			   GPIO_PORT[Lamp1]->BSRR = GPIO_PIN[Lamp1]; 
+		   else
+				GPIO_PORT[Lamp1]->BRR = GPIO_PIN[Lamp1]; 
+		break;
+		case LAMP_LED2:
+			if(value == BSP_LAMP_OFF)
+			   GPIO_PORT[Lamp2]->BSRR = GPIO_PIN[Lamp2]; 
+		   else
+				GPIO_PORT[Lamp2]->BRR = GPIO_PIN[Lamp2]; 
+		break;
+		default:
+			break;
+	}
+}

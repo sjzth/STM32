@@ -16,6 +16,16 @@
 
 static uint32_t sysGetPastTime=0;
 static uint32_t loopPastTime=0;
+/**
+  * @brief  This function handles SysTick Handler.
+  * @param  None
+  * @retval None
+  */
+void SysTick_Handler(void)
+{
+   sysGetPastTime++;
+	 loopPastTime++;
+}
 /*!
     @brief      MCUÑ­»·º¯Êý
     @param      ÎÞ
@@ -24,7 +34,7 @@ static uint32_t loopPastTime=0;
 uint32_t hal_mcu_loop(void)
 {
     uint32_t PastTime;
-    IWDG_ReloadCounter();
+    //IWDG_ReloadCounter();
     HAL_CRITICAL_STATEMENT(PastTime = loopPastTime;loopPastTime = 0;);
     return PastTime;
 }
